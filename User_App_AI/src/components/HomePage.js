@@ -41,7 +41,7 @@ useEffect(() => {
   return (
     <div className="event-grid-container">
       <div className="hero-section">
-        <h1>Wellcome to Our Website</h1>
+        <h1>Welcome to Our Website</h1>
         <p>Explore creative project ideas and generate your own unique website</p>
       </div>
     </div>
