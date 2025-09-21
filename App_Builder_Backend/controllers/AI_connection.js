@@ -9,7 +9,7 @@ const session = require('express-session');
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const ai = new GoogleGenerativeAI(process.env.API_KEY);
 const PromptResponse = require('../model/PromptResponseSchema');
-const User = require('../model/user');
+const User = require('../model/User');
 
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => console.log('Connected to MongoDB'))
@@ -191,8 +191,12 @@ app.get('/', (req, res) => {
 });
 
 // Start server
-app.listen(PORT, () => {
-    console.log(`🚀 AI Web Generator Backend running on port ${PORT}`);
-    console.log(`🤖 AI connection controller active`);
-    console.log(`🔗 Frontend URL: http://localhost:3000`);
-});
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`🚀 AI Web Generator Backend running on port ${PORT}`);
+        console.log(`🤖 AI connection controller active`);
+        console.log(`🔗 Frontend URL: http://localhost:3000`);
+    });
+}
+
+module.exports = app;
