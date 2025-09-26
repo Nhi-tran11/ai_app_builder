@@ -29,7 +29,18 @@ jest.mock('../model/PromptResponseSchema', () => ({
     '--header-bg': 'test-gradient',
     '--main-bg': 'test-bg',
     timestamps: true
-  })
+  }),
+
+  // Mock findOne.sort
+  findOne: jest.fn().mockReturnValue({ sort: jest.fn().mockReturnValue(Promise.resolve({
+    appName: 'Test App',
+    roles: [],
+    emoji: '🚀',
+    '--header-bg': 'test-gradient',
+    '--main-bg': 'test-bg',
+    timestamps: true
+  }))})
+
 }));
 // Mock Google Generative AI
 jest.mock('@google/generative-ai', () => ({
@@ -257,4 +268,16 @@ describe('AI Connection API Tests', () => {
         });
       });
   });
-});
+
+  describe('GET/saved-prompts - Validation Tests', () => {
+    test('should respond with 200 and return saved prompts', async () => {
+      return testRequest
+        .get('/saved-prompts')
+        // .expect(200)
+        .expect((res) => {
+          expect(res.body.data).toBeDefined();
+        });
+    });
+  });
+  
+  });

@@ -155,8 +155,7 @@ app.get('/saved-prompts', async (req, res) => {
         const savedPrompts = await PromptResponse.findOne()
             .sort({ createdAt: -1 }) // Sort by newest first
 
-
-        res.json({
+        res.status(200).json({
             data: savedPrompts,
         });
     } catch (error) {
@@ -168,34 +167,12 @@ app.get('/saved-prompts', async (req, res) => {
     }
 });
 
-// Health check endpoint
-app.get('/health', (req, res) => {
-    res.json({
-        status: 'healthy',
-        timestamp: new Date().toISOString(),
-        uptime: process.uptime(),
-        mongodb: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected'
-    });
-});
-
-// Default route
-app.get('/', (req, res) => {
-    res.json({
-        message: 'AI Web Generator Backend API',
-        status: 'running',
-        endpoints: {
-            health: '/health',
-            queryPrompt: '/query-prompt'
-        }
-    });
-});
-
 // Start server
 if (require.main === module) {
     app.listen(PORT, () => {
-        console.log(`🚀 AI Web Generator Backend running on port ${PORT}`);
-        console.log(`🤖 AI connection controller active`);
-        console.log(`🔗 Frontend URL: http://localhost:3000`);
+        console.log(`AI Web Generator Backend running on port ${PORT}`);
+        console.log(`AI connection controller active`);
+        console.log(`Frontend URL: http://localhost:3000`);
     });
 }
 
