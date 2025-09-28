@@ -95,6 +95,7 @@ const handleRoleClick = (features, introductionRole, role) => {
 
   return (
     <header className="lemon-header">
+      {error && <div className="error-message">{error}</div>}
       <div className="header-container">
         <div className="logo" onClick={() => navigate('/')}>
           <span className="logo-icon">{appEmoji}</span>

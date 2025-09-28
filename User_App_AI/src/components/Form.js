@@ -1,7 +1,6 @@
-import {  use, useState } from 'react';
+import {  useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Form.css';
-import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 const Form = () => {
@@ -49,8 +48,7 @@ const Form = () => {
   return (
     <div className="form-container">
       <div className="form-header">
-        <button className="back-btn" onClick={handleBackClick}>
-          ← Back to Features
+        <button className="back-btn" onClick={handleBackClick}>← Back to Features
         </button>
       </div>
 
@@ -83,7 +81,7 @@ const Form = () => {
                 {isSubmitting ? (
                   <span>🔄 Processing...</span>
                 ) : (
-                  <span>🎉 Submit {entity.entity || 'Form'}</span>
+                  <span>Submit {entity.entity || 'Form'}</span>
                 )}
               </button>
             </form>

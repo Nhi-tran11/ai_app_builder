@@ -1,4 +1,4 @@
-import { useState, useEffect, use } from 'react';
+
 import { useNavigate } from 'react-router-dom';
 import './Feature.css';
 import { useLocation } from 'react-router-dom';
@@ -10,9 +10,6 @@ const Feature = () => {
   const selectedFeatures = location.state?.features || [];
   const introductionRole = location.state?.introductionRole || '';
   const role = location.state?.role || '';
-  console.log('Selected features from location state:', selectedFeatures);
-  const [events, setEvents] = useState([]);
-  const BUTTON_ITEMS = ["Add Course", "View Courses"];
 
  const handleBackClick = () => {
     // Navigate back to event details
