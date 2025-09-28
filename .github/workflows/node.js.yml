@@ -20,20 +20,26 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
     - name: Test Frontend generator
       run: |
-        cd App_Builder_frontend
         npm ci
         npm run test:run
+      working-directory: ./App_Builder_frontend
         
     - name: Test Backend generator
       run: |
-        cd App_Builder_Backend
         npm ci
         npm run test
+      working-directory: ./App_Builder_Backend
         
     - name: Test AI generator
       run: |
-        cd User_App_AI
         npm ci
         npm run test:run
+      working-directory: ./User_App_AI
