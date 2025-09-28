@@ -27,18 +27,18 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Test Frontend generator
       run: |
-        npm install
+        npm ci
         npm run test:run
       working-directory: ./App_Builder_frontend
         
     - name: Test Backend generator
       run: |
-        npm install
+        npm ci
         npm run test
       working-directory: ./App_Builder_Backend
         
     - name: Test AI generator
       run: |
-        npm install
+        npm ci
         npm run test:run
       working-directory: ./User_App_AI
