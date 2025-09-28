@@ -1,21 +1,13 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
-name: Frontend generator CI test
+name: Node.js CI
 
 on:
   push:
     branches: [ "main" ]
-    paths:
-      - 'App_Builder_frontend/**'
-      # - 'App_Builder_Backend/**'
-      # - 'User_App_AI/**'
   pull_request:
     branches: [ "main" ]
-    paths:
-      - 'App_Builder_frontend/**'
-      # - 'App_Builder_Backend/**'
-      # - 'User_App_AI/**'
 
 jobs:
   build:
@@ -39,14 +31,14 @@ jobs:
         npm run test:run
       working-directory: ./App_Builder_frontend
         
-    # - name: Test Backend generator
-    #   run: |
-    #     npm install
-    #     npm run test
-    #   working-directory: ./App_Builder_Backend
+    - name: Test Backend generator
+      run: |
+        npm install
+        npm run test
+      working-directory: ./App_Builder_Backend
         
-    # - name: Test AI generator
-    #   run: |
-    #     npm install
-    #     npm run test:run
-    #   working-directory: ./User_App_AI
+    - name: Test AI generator
+      run: |
+        npm install
+        npm run test:run
+      working-directory: ./User_App_AI
