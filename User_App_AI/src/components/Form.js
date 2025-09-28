@@ -11,6 +11,8 @@ const Form = () => {
   const selectedEntities = location.state?.entities || [];
   console.log('Selected entities from location state:', selectedEntities);
   const features = location.state?.features || [];
+  const role = location.state?.role || '';
+  const introductionRole = location.state?.introductionRole || '';
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({});
   const handleInputChange = (e) => {
@@ -28,7 +30,9 @@ const Form = () => {
     navigate('/feature', {
       state: {
         entities: selectedEntities,  // Pass back the current entities
-        features: features
+        features: features,
+        role: role, // Pass back the current role
+        introductionRole: introductionRole // Pass back the current introductionRole
       }
     });
   };
@@ -46,7 +50,7 @@ const Form = () => {
     <div className="form-container">
       <div className="form-header">
         <button className="back-btn" onClick={handleBackClick}>
-          ← Back to Event
+          ← Back to Features
         </button>
       </div>
 

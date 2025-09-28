@@ -6,6 +6,7 @@ const promptResponseSchema = new mongoose.Schema(
     roles: [
       {
         role: String,
+        introductionRole: String,
         features: [
           {
             feature: String,
@@ -20,7 +21,8 @@ const promptResponseSchema = new mongoose.Schema(
     ],
     emoji: { type: String, required: true },
     "--header-bg": { type: String, required: false },
-    "--main-bg": { type: String, required: false }
+    "--main-bg": { type: String, required: false },
+    introduction: { type: String, required: true }
   },
   { timestamps: true } 
 );

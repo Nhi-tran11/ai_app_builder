@@ -14,7 +14,7 @@ const handleLoginClick = () => {
     <header className="lemon-header">
       <div className="header-container">
         <div className="logo" onClick={() => navigate('/')}>
-          <span className="logo-icon">🍋</span>
+          <span className="logo-icon">🧑‍💻</span>
           <span className="logo-text" >Web App Generator</span>
         </div>
         <div className="header-actions">

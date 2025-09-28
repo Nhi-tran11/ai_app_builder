@@ -36,13 +36,22 @@ useEffect(() => {
   };
 
   fetchData();
-}, []);
+}, [aiResponse]);
 
   return (
     <div className="event-grid-container">
       <div className="hero-section">
-        <h1>Welcome to Our Website</h1>
-        <p>Explore creative project ideas and generate your own unique website</p>
+      {aiResponse==null ?(
+        <>
+          <h1>Welcome to Our AI-Powered Website Generator</h1>
+          <p>Explore creative project ideas and generate your own unique website</p>
+        </>
+      ) : (
+        <>
+          <h1>Welcome to {aiResponse?.appName}</h1>
+          <p>{aiResponse?.introduction}</p>
+        </>
+      )}
       </div>
     </div>
   );

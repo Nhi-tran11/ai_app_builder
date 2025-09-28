@@ -70,13 +70,14 @@ async function queryPrompt(prompt) {
 and admins manage reports.". You have to capture all relevant details such as following:\n
 app name: Course Manager,\n role of user: Teacher, student and admin,\n features: add courses, enroll student, view report, entities: students, courses, grades.\n From entities, you need give me some examples of each entity and their attributes such as - Student → Name, Email, Age
 - Course → Title, Code, Credits
-- Grade → Student, Course, Grade.\n.Give one emoji for app.\n and give a new gradient to change header and relevant main background (only light colour) such as linear-gradient(135deg, #ffeb3b 0%, #ffc107 100%) and linear-gradient(135deg, #fef9e7 0%, #fff8e1 50%, #f3e5f5 100%)respectively. Base on request of Prompt: ${prompt}.You must return a JSON object with the following structure and do not add any characters:
+- Grade → Student, Course, Grade.\n Give a simple introduction for each role such as what they can do on this app\n.Give one emoji for app.\n and give a new gradient to change header and relevant main background (only light colour) format it as linear-gradient(135deg, #ffeb3b 0%, #ffc107 100%) and linear-gradient(135deg, #fef9e7 0%, #fff8e1 50%, #f3e5f5 100%)respectively.\n Give a simple introduction about the app. Base on request of Prompt: ${prompt}.You must return a JSON object with the following structure and do not add any characters:
 
 {
   "appName": "string",
   "roles": [
     {
       "role": "string",
+      "introductionRole": "string",
       "features": [
         {
           "feature": "string",
@@ -92,7 +93,8 @@ app name: Course Manager,\n role of user: Teacher, student and admin,\n features
   ],
   "emoji": "string",
   "--header-bg": "string",
-  "--main-bg": "string"
+  "--main-bg": "string",
+  "introduction": "string"
 }`,
                 }
             ]
@@ -128,6 +130,7 @@ app.post('/query-prompt', async (req, res) => {
             emoji: unescapedObject.emoji,
             "--header-bg": unescapedObject["--header-bg"],
             "--main-bg": unescapedObject["--main-bg"],
+            introduction: unescapedObject.introduction,
             timestamps: true
 
         });

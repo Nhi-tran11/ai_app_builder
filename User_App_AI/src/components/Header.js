@@ -29,7 +29,6 @@ function Header ()  {
 
 const ROLE_FEATURES = [];
 const [groupedRoles, setGroupedRoles] = useState([]); // State to hold grouped roles and features
-
 useEffect(() => {
   if (currentAiResponse) {
     // Process the currentAiResponse data here
@@ -56,6 +55,7 @@ useEffect(() => {
       if (responseData && responseData.roles) {
         responseData.roles.forEach(roleObj => {
           const roleName = roleObj.role;
+          const introductionRole = roleObj.introductionRole;
           const features = [];
           if (roleObj.features) {
             roleObj.features.forEach(featureObj => {
@@ -72,7 +72,7 @@ useEffect(() => {
               features.push(featureData);
             });
           }
-          ROLE_FEATURES.push({role: roleName, features: features});
+          ROLE_FEATURES.push({role: roleName, introductionRole: introductionRole, features: features});
         });
   
         setGroupedRoles(ROLE_FEATURES);
@@ -89,8 +89,8 @@ const handleLoginClick = () => {
   navigate('/login');
 };
 
-const handleRoleClick = (features) => {
-  navigate(`/feature`, {state: {"features": features}});
+const handleRoleClick = (features, introductionRole, role) => {
+  navigate(`/feature`, {state: {"features": features, "introductionRole": introductionRole, "role": role}});
 };
 
   return (
@@ -102,7 +102,7 @@ const handleRoleClick = (features) => {
         </div>
         <nav className="nav-menu">
           {groupedRoles.map((roleGroup) => (
-            <button key={roleGroup.role} className="nav-btn" onClick={() => handleRoleClick(roleGroup.features)}>
+            <button key={roleGroup.role} className="nav-btn" onClick={() => handleRoleClick(roleGroup.features, roleGroup.introductionRole, roleGroup.role)}>
               {roleGroup.role} 
             </button>
           ))}
