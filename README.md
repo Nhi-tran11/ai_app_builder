@@ -58,7 +58,7 @@ AI_WEB_GENERATOR/
 - **Feature** - Displays generated features
 - **Form** - Creates forms from entities
 
-## 🔧 Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 - Node.js (v16+)

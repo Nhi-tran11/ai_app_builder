@@ -2,14 +2,14 @@
 
 A modern React-based web application that generates websites using AI technology. This project features a beautiful inspired design with user authentication and AI-powered content generation.
 
-## 🚀 Features
+## Features
 
 - **AI-Powered Website Generation**: Generate unique websites based on user prompts
 - **User Authentication**: Complete sign-up and login system
 - **Modern UI Design**: interface with vibrant gradients and smooth animations
 - **Real-time AI Integration**: Connect with AI services for dynamic content generation
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Frontend**: React 19.1.1
 - **Routing**: React Router DOM 7.8.1
@@ -18,7 +18,7 @@ A modern React-based web application that generates websites using AI technology
 - **Testing**: React Testing Library
 - **Build Tool**: Create React App
 
-## 📦 Installation
+## Installation
 
 1. **Clone the repository**
    ```bash
@@ -58,14 +58,14 @@ src/
 └── index.css              # Base CSS styles
 ```
 
-## 🔧 Available Scripts
+##  Available Scripts
 
 - `npm start` - Run the app in development mode
 - `npm test` - Launch the test runner
 - `npm run build` - Build the app for production
 - `npm run eject` - Eject from Create React App (one-way operation)
 
-## 🌐 API Integration
+##  API Integration
 
 The application integrates with two backend services:
 
@@ -76,14 +76,14 @@ The application integrates with two backend services:
 ### AI Service API (Port 5000)
 - **POST** `/query-prompt` - Generate AI content based on user prompts
 
-## 🎨 Design Features
+##  Design Features
 
 - **inspired theme** with vibrant yellow and orange gradients
 - **Glassmorphism effects** with backdrop filters and translucent cards
 - **Smooth animations** including fade-in effects and hover transitions
 - **Custom scrollbar** styling
 
-## 📱 Components Overview
+##  Components Overview
 
 ### [`Header`](src/components/Header.js)
 - Navigation bar with logo and user actions
@@ -102,7 +102,7 @@ The application integrates with two backend services:
 - Consistent styling with the app theme
 - Secure API integration
 
-## 🚀 Getting Started with Development
+## Getting Started with Development
 
 1. **Set up backend services**
    - Ensure your authentication API is running on port 5000
@@ -118,7 +118,7 @@ The application integrates with two backend services:
    npm start
    ```
 
-## 🧪 Testing
+## Testing
 
 Run the test suite:
 ```bash
@@ -127,7 +127,7 @@ npm test
 
 The project includes basic React component tests and can be extended with additional test cases.
 
-## 📦 Building for Production
+## Building for Production
 
 Create a production build:
 ```bash

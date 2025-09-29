@@ -90,78 +90,6 @@
 
 .form-group input:focus,
 
-.ticket-selector {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 15px;
-}
-
-.ticket-selector label {
-  font-size: 16px;
-  font-weight: 500;
-  color: #333;
-}
-
-.ticket-controls {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.ticket-btn {
-  background: #ffeb3b;
-  border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ticket-btn:hover {
-  background: #ffc107;
-  transform: scale(1.1);
-}
-
-.ticket-count {
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
-  min-width: 30px;
-  text-align: center;
-}
-
-.booking-sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.event-breakdown {
-  background: white;
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-  border: 2px solid #f0f0f0;
-}
-
-.event-breakdown h3 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #333;
-  margin: 0 0 20px 0;
-}
-
-
-
 .confirm-form-btn {
   width: 100%;
   background: var(--header-bg);
@@ -200,11 +128,6 @@
   
   .form-header h1 {
     font-size: 28px;
-  }
-  
-  
-  .create-form {
-    padding: 20px;
   }
 
   .confirm-form-btn {
