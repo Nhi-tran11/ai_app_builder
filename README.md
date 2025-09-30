@@ -67,7 +67,7 @@ AI_WEB_GENERATOR/
 
 ### 1. Clone the Repository
 ```bash
-git clone <https://github.com/Nhi-tran11/App_builder.git>
+git clone <https://github.com/Nhi-tran11/ai_app_builder.git>
 cd AI_WEB_GENERATOR
 ```
 
