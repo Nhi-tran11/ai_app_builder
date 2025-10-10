@@ -1,3 +1,10 @@
+# Demo video
+
+
+
+https://github.com/user-attachments/assets/4673b29a-f2df-4749-8531-34ddfdcbfed8
+
+
 # AI Web Generator
 
 A comprehensive AI-powered web application generator that creates custom websites based on user prompts. This project consists of three main components: an AI-powered app builder frontend, a generated user application, and a backend service.
